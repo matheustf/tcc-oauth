@@ -1,0 +1,101 @@
+org.eclipse.m2e.logback.configuration: The org.eclipse.m2e.logback.configuration bundle was activated before the state location was initialized.  Will retry after the state location is initialized.
+org.eclipse.m2e.logback.configuration: Logback config file: /opt/workspaceSpring/.metadata/.plugins/org.eclipse.m2e.logback.configuration/logback.1.8.2.20171007-0217.xml
+org.eclipse.m2e.logback.configuration: Initializing logback
+19:03:32,169 |-INFO in ch.qos.logback.classic.LoggerContext[default] - Could NOT find resource [logback.groovy]
+19:03:32,170 |-INFO in ch.qos.logback.classic.LoggerContext[default] - Could NOT find resource [logback-test.xml]
+19:03:32,170 |-INFO in ch.qos.logback.classic.LoggerContext[default] - Could NOT find resource [logback.xml]
+19:03:32,170 |-INFO in ch.qos.logback.classic.LoggerContext[default] - Setting up default configuration.
+19:03:32,278 |-INFO in ch.qos.logback.classic.joran.action.ConfigurationAction - debug attribute not set
+19:03:32,282 |-INFO in ReconfigureOnChangeFilter{invocationCounter=0} - Will scan for changes in [[/opt/workspaceSpring/.metadata/.plugins/org.eclipse.m2e.logback.configuration/logback.1.8.2.20171007-0217.xml]] every 60 seconds. 
+19:03:32,282 |-INFO in ch.qos.logback.classic.joran.action.ConfigurationAction - Adding ReconfigureOnChangeFilter as a turbo filter
+19:03:32,286 |-INFO in ch.qos.logback.core.joran.action.AppenderAction - About to instantiate appender of type [ch.qos.logback.core.ConsoleAppender]
+19:03:32,287 |-INFO in ch.qos.logback.core.joran.action.AppenderAction - Naming appender as [STDOUT]
+19:03:32,321 |-INFO in ch.qos.logback.core.joran.action.AppenderAction - About to instantiate appender of type [ch.qos.logback.core.rolling.RollingFileAppender]
+19:03:32,322 |-ERROR in ch.qos.logback.core.joran.action.AppenderAction - Could not create an Appender of type [ch.qos.logback.core.rolling.RollingFileAppender]. ch.qos.logback.core.util.DynamicClassLoadingException: Failed to instantiate type ch.qos.logback.core.rolling.RollingFileAppender
+	at ch.qos.logback.core.util.DynamicClassLoadingException: Failed to instantiate type ch.qos.logback.core.rolling.RollingFileAppender
+	at 	at ch.qos.logback.core.util.OptionHelper.instantiateByClassNameAndParameter(OptionHelper.java:73)
+	at 	at ch.qos.logback.core.util.OptionHelper.instantiateByClassName(OptionHelper.java:48)
+	at 	at ch.qos.logback.core.util.OptionHelper.instantiateByClassName(OptionHelper.java:35)
+	at 	at ch.qos.logback.core.joran.action.AppenderAction.begin(AppenderAction.java:54)
+	at 	at ch.qos.logback.core.joran.spi.Interpreter.callBeginAction(Interpreter.java:275)
+	at 	at ch.qos.logback.core.joran.spi.Interpreter.startElement(Interpreter.java:147)
+	at 	at ch.qos.logback.core.joran.spi.Interpreter.startElement(Interpreter.java:129)
+	at 	at ch.qos.logback.core.joran.spi.EventPlayer.play(EventPlayer.java:50)
+	at 	at ch.qos.logback.core.joran.GenericConfigurator.doConfigure(GenericConfigurator.java:149)
+	at 	at ch.qos.logback.core.joran.GenericConfigurator.doConfigure(GenericConfigurator.java:135)
+	at 	at ch.qos.logback.core.joran.GenericConfigurator.doConfigure(GenericConfigurator.java:99)
+	at 	at ch.qos.logback.core.joran.GenericConfigurator.doConfigure(GenericConfigurator.java:49)
+	at 	at org.eclipse.m2e.logback.configuration.LogPlugin.loadConfiguration(LogPlugin.java:185)
+	at 	at org.eclipse.m2e.logback.configuration.LogPlugin.configureLogback(LogPlugin.java:144)
+	at 	at org.eclipse.m2e.logback.configuration.LogPlugin.access$2(LogPlugin.java:107)
+	at 	at org.eclipse.m2e.logback.configuration.LogPlugin$1.run(LogPlugin.java:62)
+	at 	at java.util.TimerThread.mainLoop(Timer.java:555)
+	at 	at java.util.TimerThread.run(Timer.java:505)
+Caused by: java.lang.ClassNotFoundException: ch.qos.logback.core.rolling.RollingFileAppender cannot be found by ch.qos.logback.classic_1.1.2.v20160208-0839
+	at 	at org.eclipse.osgi.internal.loader.BundleLoader.findClassInternal(BundleLoader.java:484)
+	at 	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:395)
+	at 	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:387)
+	at 	at org.eclipse.osgi.internal.loader.ModuleClassLoader.loadClass(ModuleClassLoader.java:150)
+	at 	at java.lang.ClassLoader.loadClass(ClassLoader.java:357)
+	at 	at ch.qos.logback.core.util.OptionHelper.instantiateByClassNameAndParameter(OptionHelper.java:60)
+	at 	... 17 common frames omitted
+19:03:32,322 |-ERROR in ch.qos.logback.core.joran.spi.Interpreter@11:81 - ActionException in Action for tag [appender] ch.qos.logback.core.joran.spi.ActionException: ch.qos.logback.core.util.DynamicClassLoadingException: Failed to instantiate type ch.qos.logback.core.rolling.RollingFileAppender
+	at ch.qos.logback.core.joran.spi.ActionException: ch.qos.logback.core.util.DynamicClassLoadingException: Failed to instantiate type ch.qos.logback.core.rolling.RollingFileAppender
+	at 	at ch.qos.logback.core.joran.action.AppenderAction.begin(AppenderAction.java:82)
+	at 	at ch.qos.logback.core.joran.spi.Interpreter.callBeginAction(Interpreter.java:275)
+	at 	at ch.qos.logback.core.joran.spi.Interpreter.startElement(Interpreter.java:147)
+	at 	at ch.qos.logback.core.joran.spi.Interpreter.startElement(Interpreter.java:129)
+	at 	at ch.qos.logback.core.joran.spi.EventPlayer.play(EventPlayer.java:50)
+	at 	at ch.qos.logback.core.joran.GenericConfigurator.doConfigure(GenericConfigurator.java:149)
+	at 	at ch.qos.logback.core.joran.GenericConfigurator.doConfigure(GenericConfigurator.java:135)
+	at 	at ch.qos.logback.core.joran.GenericConfigurator.doConfigure(GenericConfigurator.java:99)
+	at 	at ch.qos.logback.core.joran.GenericConfigurator.doConfigure(GenericConfigurator.java:49)
+	at 	at org.eclipse.m2e.logback.configuration.LogPlugin.loadConfiguration(LogPlugin.java:185)
+	at 	at org.eclipse.m2e.logback.configuration.LogPlugin.configureLogback(LogPlugin.java:144)
+	at 	at org.eclipse.m2e.logback.configuration.LogPlugin.access$2(LogPlugin.java:107)
+	at 	at org.eclipse.m2e.logback.configuration.LogPlugin$1.run(LogPlugin.java:62)
+	at 	at java.util.TimerThread.mainLoop(Timer.java:555)
+	at 	at java.util.TimerThread.run(Timer.java:505)
+Caused by: ch.qos.logback.core.util.DynamicClassLoadingException: Failed to instantiate type ch.qos.logback.core.rolling.RollingFileAppender
+	at 	at ch.qos.logback.core.util.OptionHelper.instantiateByClassNameAndParameter(OptionHelper.java:73)
+	at 	at ch.qos.logback.core.util.OptionHelper.instantiateByClassName(OptionHelper.java:48)
+	at 	at ch.qos.logback.core.util.OptionHelper.instantiateByClassName(OptionHelper.java:35)
+	at 	at ch.qos.logback.core.joran.action.AppenderAction.begin(AppenderAction.java:54)
+	at 	... 14 common frames omitted
+Caused by: java.lang.ClassNotFoundException: ch.qos.logback.core.rolling.RollingFileAppender cannot be found by ch.qos.logback.classic_1.1.2.v20160208-0839
+	at 	at org.eclipse.osgi.internal.loader.BundleLoader.findClassInternal(BundleLoader.java:484)
+	at 	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:395)
+	at 	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:387)
+	at 	at org.eclipse.osgi.internal.loader.ModuleClassLoader.loadClass(ModuleClassLoader.java:150)
+	at 	at java.lang.ClassLoader.loadClass(ClassLoader.java:357)
+	at 	at ch.qos.logback.core.util.OptionHelper.instantiateByClassNameAndParameter(OptionHelper.java:60)
+	at 	... 17 common frames omitted
+19:03:32,323 |-INFO in ch.qos.logback.core.joran.action.AppenderAction - About to instantiate appender of type [org.eclipse.m2e.logback.appender.EclipseLogAppender]
+19:03:32,323 |-INFO in ch.qos.logback.core.joran.action.AppenderAction - Naming appender as [EclipseLog]
+19:03:32,324 |-INFO in ch.qos.logback.core.joran.action.AppenderAction - About to instantiate appender of type [org.eclipse.m2e.logback.appender.MavenConsoleAppender]
+19:03:32,325 |-INFO in ch.qos.logback.core.joran.action.AppenderAction - Naming appender as [MavenConsoleLog]
+19:03:32,325 |-INFO in ch.qos.logback.classic.joran.action.RootLoggerAction - Setting level of ROOT logger to INFO
+19:03:32,325 |-ERROR in ch.qos.logback.core.joran.action.AppenderRefAction - Could not find an appender named [FILE]. Did you define it below instead of above in the configuration file?
+19:03:32,325 |-ERROR in ch.qos.logback.core.joran.action.AppenderRefAction - See http://logback.qos.ch/codes.html#appender_order for more details.
+19:03:32,325 |-INFO in ch.qos.logback.core.joran.action.AppenderRefAction - Attaching appender named [STDOUT] to Logger[ROOT]
+19:03:32,325 |-INFO in ch.qos.logback.core.joran.action.AppenderRefAction - Attaching appender named [EclipseLog] to Logger[ROOT]
+19:03:32,481 |-INFO in ch.qos.logback.core.joran.action.AppenderRefAction - Attaching appender named [MavenConsoleLog] to Logger[ROOT]
+19:03:32,482 |-INFO in ch.qos.logback.classic.joran.action.LoggerAction - Setting level of logger [com.ning.http.client] to INFO
+19:03:32,482 |-INFO in ch.qos.logback.classic.joran.action.ConfigurationAction - End of configuration.
+19:03:32,482 |-INFO in ch.qos.logback.classic.joran.JoranConfigurator@9974026 - Registering current configuration as safe fallback point
+
+
+(gst-plugin-scanner:10950): Clutter-WARNING **: Whoever translated default:LTR did so wrongly.
+Error sending IPC message: Pipe quebrado
+Error sending IPC message: Pipe quebrado
+Error sending IPC message: Pipe quebrado
+19:04:02.590 [Background Thread-1 (Spring IDE/3.9.1)] DEBUG org.springframework.data.repository.config.RepositoryConfigurationDelegate - Spring Data JPA - Registering repository: imageRepository - Interface: com.example.image.ImageRepository - Factory: org.springframework.data.jpa.repository.support.JpaRepositoryFactoryBean
+19:04:02.597 [Background Thread-1 (Spring IDE/3.9.1)] DEBUG org.springframework.data.repository.config.RepositoryConfigurationDelegate - Spring Data JPA - Registering repository: siteUserRepository - Interface: com.example.image.SiteUserRepository - Factory: org.springframework.data.jpa.repository.support.JpaRepositoryFactoryBean
+19:04:04.430 [Background Thread-1 (Spring IDE/3.9.1)] DEBUG org.springframework.data.repository.config.RepositoryConfigurationDelegate - Spring Data MongoDB - Registering repository: userRepository - Interface: com.github.vlsidlyarevich.repository.UserRepository - Factory: org.springframework.data.mongodb.repository.support.MongoRepositoryFactoryBean
+
+(gst-plugin-scanner:11254): Clutter-WARNING **: Whoever translated default:LTR did so wrongly.
+19:09:03.025 [Background Thread-2 (Spring IDE/3.9.1)] DEBUG org.springframework.data.repository.config.RepositoryConfigurationDelegate - Spring Data MongoDB - Registering repository: userRepository - Interface: com.github.vlsidlyarevich.repository.UserRepository - Factory: org.springframework.data.mongodb.repository.support.MongoRepositoryFactoryBean
+19:09:14.149 [Background Thread-2 (Spring IDE/3.9.1)] DEBUG org.springframework.data.repository.config.RepositoryConfigurationDelegate - Spring Data MongoDB - Registering repository: userRepository - Interface: com.github.vlsidlyarevich.repository.UserRepository - Factory: org.springframework.data.mongodb.repository.support.MongoRepositoryFactoryBean
+19:16:31.805 [Background Thread-3 (Spring IDE/3.9.1)] DEBUG org.springframework.data.repository.config.RepositoryConfigurationDelegate - Spring Data MongoDB - Registering repository: userRepository - Interface: com.github.vlsidlyarevich.repository.UserRepository - Factory: org.springframework.data.mongodb.repository.support.MongoRepositoryFactoryBean
+19:17:03.485 [Background Thread-3 (Spring IDE/3.9.1)] DEBUG org.springframework.data.repository.config.RepositoryConfigurationDelegate - Spring Data MongoDB - Registering repository: userRepository - Interface: com.github.vlsidlyarevich.repository.UserRepository - Factory: org.springframework.data.mongodb.repository.support.MongoRepositoryFactoryBean
+19:18:21.328 [Background Thread-4 (Spring IDE/3.9.1)] DEBUG org.springframework.data.repository.config.RepositoryConfigurationDelegate - Spring Data MongoDB - Registering repository: userRepository - Interface: com.github.vlsidlyarevich.repository.UserRepository - Factory: org.springframework.data.mongodb.repository.support.MongoRepositoryFactoryBean

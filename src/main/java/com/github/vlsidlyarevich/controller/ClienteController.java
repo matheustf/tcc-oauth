@@ -8,28 +8,24 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.github.vlsidlyarevich.converter.ConverterFacade;
-import com.github.vlsidlyarevich.dto.ClienteDTO;
-import com.github.vlsidlyarevich.service.UserService;
-
+import com.github.vlsidlyarevich.dto.DadosClienteDTO;
+import com.github.vlsidlyarevich.model.DadosCliente;
+import com.github.vlsidlyarevich.service.UsuarioService;
 
 @RestController
 @RequestMapping("/api/cliente")
 public class ClienteController {
 
-    private final UserService service;
+	private final UsuarioService service;
 
-    private final ConverterFacade converterFacade;
+	@Autowired
+	public ClienteController(UsuarioService service) {
+		this.service = service;
+	}
 
-    @Autowired
-    public ClienteController(final UserService service,
-                            final ConverterFacade converterFacade) {
-        this.service = service;
-        this.converterFacade = converterFacade;
-    }
-
-    @RequestMapping(method = RequestMethod.POST)
-    public ResponseEntity<?> signUp(@RequestBody final ClienteDTO dto) {
-        return new ResponseEntity<>(service.addCliente(converterFacade.convertCliente(dto)), HttpStatus.OK);
-    }
+	@RequestMapping(method = RequestMethod.POST)
+	public ResponseEntity<?> signUp(@RequestBody DadosClienteDTO dadosClienteDTO) {
+		DadosCliente usuario = service.addCliente(dadosClienteDTO);
+		return new ResponseEntity<>(usuario, HttpStatus.OK);
+	}
 }

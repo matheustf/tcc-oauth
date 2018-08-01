@@ -7,15 +7,17 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-
 @Data
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class TokenDTO implements Serializable {
+public class DadosClienteDTO implements Serializable {
 
-    private static final long serialVersionUID = 6710061358371752955L;
+	private static final long serialVersionUID = -1684427972703414690L;
 
-    private String token;
+	private String nome;
+	private String dataDeNascimento;
+	private String cpf;
+	private EnderecoDTO endereco;
 
 }

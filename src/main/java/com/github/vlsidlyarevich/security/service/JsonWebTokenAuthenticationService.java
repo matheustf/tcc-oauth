@@ -1,7 +1,7 @@
 package com.github.vlsidlyarevich.security.service;
 
 import com.github.vlsidlyarevich.exception.model.UserNotFoundException;
-import com.github.vlsidlyarevich.model.User;
+import com.github.vlsidlyarevich.model.Usuario;
 import com.github.vlsidlyarevich.model.UserAuthentication;
 import com.github.vlsidlyarevich.security.constants.SecurityConstants;
 import io.jsonwebtoken.Claims;
@@ -39,7 +39,7 @@ public class JsonWebTokenAuthenticationService implements TokenAuthenticationSer
         final String token = request.getHeader(SecurityConstants.AUTH_HEADER_NAME);
         final Jws<Claims> tokenData = parseToken(token);
         if (tokenData != null) {
-            User user = getUserFromToken(tokenData);
+            Usuario user = getUserFromToken(tokenData);
             if (user != null) {
                 return new UserAuthentication(user);
             }
@@ -59,9 +59,9 @@ public class JsonWebTokenAuthenticationService implements TokenAuthenticationSer
         return null;
     }
 
-    private User getUserFromToken(final Jws<Claims> tokenData) {
+    private Usuario getUserFromToken(final Jws<Claims> tokenData) {
         try {
-            return (User) userDetailsService
+            return (Usuario) userDetailsService
                     .loadUserByUsername(tokenData.getBody().get("username").toString());
         } catch (UsernameNotFoundException e) {
             throw new UserNotFoundException("User "

@@ -1,7 +1,7 @@
 package com.github.vlsidlyarevich.security.service;
 
 import com.github.vlsidlyarevich.exception.model.ServiceException;
-import com.github.vlsidlyarevich.model.User;
+import com.github.vlsidlyarevich.model.Usuario;
 import io.jsonwebtoken.JwtBuilder;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
@@ -36,7 +36,7 @@ public class JsonWebTokenService implements TokenService {
         if (username == null || password == null) {
             return null;
         }
-        final User user = (User) userDetailsService.loadUserByUsername(username);
+        final Usuario user = (Usuario) userDetailsService.loadUserByUsername(username);
         Map<String, Object> tokenData = new HashMap<>();
         if (password.equals(user.getPassword())) {
             tokenData.put("clientType", "user");
