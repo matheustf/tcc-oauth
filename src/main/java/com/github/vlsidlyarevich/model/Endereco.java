@@ -9,7 +9,7 @@ import lombok.Setter;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public class Endereco extends BaseEntity {
+public class Endereco {
 
     private static final long serialVersionUID = 7954325925563724664L;
 

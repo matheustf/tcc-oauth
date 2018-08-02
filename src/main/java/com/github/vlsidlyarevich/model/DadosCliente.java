@@ -9,7 +9,7 @@ import lombok.Setter;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public class DadosCliente extends BaseEntity {
+public class DadosCliente {
 
 	private String nome;
     private String dataDeNascimento;

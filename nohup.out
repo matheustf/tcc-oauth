@@ -99,3 +99,6 @@ Error sending IPC message: Pipe quebrado
 19:16:31.805 [Background Thread-3 (Spring IDE/3.9.1)] DEBUG org.springframework.data.repository.config.RepositoryConfigurationDelegate - Spring Data MongoDB - Registering repository: userRepository - Interface: com.github.vlsidlyarevich.repository.UserRepository - Factory: org.springframework.data.mongodb.repository.support.MongoRepositoryFactoryBean
 19:17:03.485 [Background Thread-3 (Spring IDE/3.9.1)] DEBUG org.springframework.data.repository.config.RepositoryConfigurationDelegate - Spring Data MongoDB - Registering repository: userRepository - Interface: com.github.vlsidlyarevich.repository.UserRepository - Factory: org.springframework.data.mongodb.repository.support.MongoRepositoryFactoryBean
 19:18:21.328 [Background Thread-4 (Spring IDE/3.9.1)] DEBUG org.springframework.data.repository.config.RepositoryConfigurationDelegate - Spring Data MongoDB - Registering repository: userRepository - Interface: com.github.vlsidlyarevich.repository.UserRepository - Factory: org.springframework.data.mongodb.repository.support.MongoRepositoryFactoryBean
+ORM initialization successful
+App events bus { name: 'booted', namespace: 'shared' }
+App events bus { name: 'booted', namespace: 'requester' }

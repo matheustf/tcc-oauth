@@ -28,7 +28,6 @@ public class UsuarioServiceImpl implements UsuarioService {
 	public Usuario create(UsuarioDTO usuarioDTO) {
 		Usuario usuario = modelMapper().map(usuarioDTO, Usuario.class);
 
-		usuario.setCreatedAt(String.valueOf(LocalDateTime.now()));
 		return repository.save(usuario);
 	}
 
@@ -49,19 +48,16 @@ public class UsuarioServiceImpl implements UsuarioService {
 
 	@Override
 	public Usuario update(String id, UsuarioDTO usuarioDTO) {
+		//DadosCliente dadosCliente =  modelMapper().map(usuarioDTO.getDados(), DadosCliente.class);
 		Usuario usuario = modelMapper().map(usuarioDTO, Usuario.class);
-		usuario.setId(id);
-
+		//usuario.setDados(dadosCliente);
+		//usuario.setId(id);
 		Usuario saved = repository.findOne(id);
 
-		if (saved != null) {
-			usuario.setCreatedAt(saved.getCreatedAt());
-			usuario.setUpdatedAt(String.valueOf(LocalDateTime.now()));
-		} else {
-			usuario.setCreatedAt(String.valueOf(LocalDateTime.now()));
-		}
-		repository.save(usuario);
-		return usuario;
+		saved = usuario.update(saved, usuario);
+		
+		repository.save(saved);
+		return saved;
 	}
 
 	@Override

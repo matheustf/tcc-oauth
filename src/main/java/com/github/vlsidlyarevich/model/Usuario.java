@@ -17,9 +17,7 @@ import lombok.Setter;
 @NoArgsConstructor
 @AllArgsConstructor
 @Document
-public class Usuario extends BaseEntity implements UserDetails {
-
-    private static final long serialVersionUID = 7954325925563724664L;
+public class Usuario implements UserDetails {
 
     private String id;
     private List<Authority> authorities;
@@ -67,14 +65,7 @@ public class Usuario extends BaseEntity implements UserDetails {
     }
     
 	public Usuario update(Usuario usuario, Usuario detailsUsuario) {
-		usuario.setUsername(detailsUsuario.getUsername());
-		usuario.setPassword(detailsUsuario.getPassword());
 		usuario.setDados(detailsUsuario.getDados());
-		//usuario.setAuthorities(detailsUsuario);
-		usuario.setAccountNonExpired(detailsUsuario.isAccountNonExpired());
-		usuario.setAccountNonLocked(detailsUsuario.isAccountNonLocked());
-		usuario.setCredentialsNonExpired(detailsUsuario.isCredentialsNonExpired());
-		
 		return usuario;
 	}
 
