@@ -6,12 +6,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 
 import com.puc.tcc.oauth.model.Authority;
 import com.puc.tcc.oauth.model.Usuario;
 import com.puc.tcc.oauth.repository.UsuarioRepository;
 
-
+@EnableDiscoveryClient
 @SpringBootApplication
 public class OAuthApplication implements CommandLineRunner{
 	
