@@ -102,3 +102,134 @@ Error sending IPC message: Pipe quebrado
 ORM initialization successful
 App events bus { name: 'booted', namespace: 'shared' }
 App events bus { name: 'booted', namespace: 'requester' }
+org.eclipse.m2e.logback.configuration: The org.eclipse.m2e.logback.configuration bundle was activated before the state location was initialized.  Will retry after the state location is initialized.
+org.eclipse.m2e.logback.configuration: Logback config file: /home/matheus/wokspaceSTS/.metadata/.plugins/org.eclipse.m2e.logback.configuration/logback.1.9.0.20180606-2036.xml
+org.eclipse.m2e.logback.configuration: Initializing logback
+Transformer WrapMethodCallScript failed on org/eclipse/jdt/core/dom/ASTConverter. Trace:
+java.lang.UnsupportedOperationException: This feature requires ASM5
+	at org.objectweb.asm.MethodVisitor.visitInvokeDynamicInsn(MethodVisitor.java:459)
+	at org.objectweb.asm.ClassReader.readCode(ClassReader.java:2237)
+	at org.objectweb.asm.ClassReader.readMethod(ClassReader.java:1274)
+	at org.objectweb.asm.ClassReader.accept(ClassReader.java:679)
+	at org.objectweb.asm.ClassReader.accept(ClassReader.java:391)
+	at lombok.patcher.PatchScript.runASM(PatchScript.java:111)
+	at lombok.patcher.scripts.MethodLevelPatchScript.patch(MethodLevelPatchScript.java:53)
+	at lombok.patcher.ScriptManager$OurClassFileTransformer.transform(ScriptManager.java:106)
+	at sun.instrument.TransformerManager.transform(TransformerManager.java:188)
+	at sun.instrument.InstrumentationImpl.transform(InstrumentationImpl.java:428)
+	at java.lang.ClassLoader.defineClass1(Native Method)
+	at java.lang.ClassLoader.defineClass(ClassLoader.java:763)
+	at org.eclipse.osgi.internal.loader.ModuleClassLoader.defineClass(ModuleClassLoader.java:276)
+	at org.eclipse.osgi.internal.loader.classpath.ClasspathManager.defineClass(ClasspathManager.java:632)
+	at org.eclipse.osgi.internal.loader.classpath.ClasspathManager.findClassImpl(ClasspathManager.java:555)
+	at org.eclipse.osgi.internal.loader.classpath.ClasspathManager.findLocalClassImpl(ClasspathManager.java:514)
+	at org.eclipse.osgi.internal.loader.classpath.ClasspathManager.findLocalClass(ClasspathManager.java:501)
+	at org.eclipse.osgi.internal.loader.ModuleClassLoader.findLocalClass(ModuleClassLoader.java:328)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findLocalClass(BundleLoader.java:392)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClassInternal(BundleLoader.java:470)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:419)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:411)
+	at org.eclipse.osgi.internal.loader.ModuleClassLoader.loadClass(ModuleClassLoader.java:150)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:357)
+	at org.eclipse.jdt.core.dom.AST.convertCompilationUnit(AST.java:310)
+	at org.eclipse.jdt.internal.core.ReconcileWorkingCopyOperation.makeConsistent(ReconcileWorkingCopyOperation.java:206)
+	at org.eclipse.jdt.internal.core.ReconcileWorkingCopyOperation.executeOperation(ReconcileWorkingCopyOperation.java:91)
+	at org.eclipse.jdt.internal.core.JavaModelOperation.run(JavaModelOperation.java:733)
+	at org.eclipse.jdt.internal.core.JavaModelOperation.runOperation(JavaModelOperation.java:799)
+	at org.eclipse.jdt.internal.core.CompilationUnit.reconcile(CompilationUnit.java:1319)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy.reconcile(JavaReconcilingStrategy.java:128)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy.access$0(JavaReconcilingStrategy.java:110)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy$1.run(JavaReconcilingStrategy.java:90)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy.reconcile(JavaReconcilingStrategy.java:87)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy.initialReconcile(JavaReconcilingStrategy.java:185)
+	at org.eclipse.jdt.internal.ui.text.CompositeReconcilingStrategy.initialReconcile(CompositeReconcilingStrategy.java:119)
+	at org.eclipse.jdt.internal.ui.text.JavaCompositeReconcilingStrategy.initialReconcile(JavaCompositeReconcilingStrategy.java:136)
+	at org.eclipse.jface.text.reconciler.MonoReconciler.initialProcess(MonoReconciler.java:95)
+	at org.eclipse.jdt.internal.ui.text.JavaReconciler.initialProcess(JavaReconciler.java:420)
+	at org.eclipse.jface.text.reconciler.AbstractReconciler$BackgroundThread.run(AbstractReconciler.java:174)
+23:10:03.046 [Background Thread-1 (Spring IDE/3.9.5)] DEBUG org.springframework.data.repository.config.RepositoryConfigurationDelegate - Spring Data Elasticsearch - Registering repository: pedidoRepository - Interface: com.puc.tcc.consumer.repository.PedidoRepository - Factory: org.springframework.data.elasticsearch.repository.support.ElasticsearchRepositoryFactoryBean
+23:10:03.070 [Background Thread-1 (Spring IDE/3.9.5)] DEBUG org.springframework.data.repository.config.RepositoryConfigurationDelegate - Spring Data Elasticsearch - Registering repository: avaliacaoRepository - Interface: com.puc.tcc.consumer.repository.AvaliacaoRepository - Factory: org.springframework.data.elasticsearch.repository.support.ElasticsearchRepositoryFactoryBean
+23:10:03.075 [Background Thread-1 (Spring IDE/3.9.5)] DEBUG org.springframework.data.repository.config.RepositoryConfigurationDelegate - Spring Data Elasticsearch - Registering repository: entregaRepository - Interface: com.puc.tcc.consumer.repository.EntregaRepository - Factory: org.springframework.data.elasticsearch.repository.support.ElasticsearchRepositoryFactoryBean
+23:10:06.253 [Background Thread-1 (Spring IDE/3.9.5)] DEBUG org.springframework.data.repository.config.RepositoryConfigurationDelegate - Spring Data MongoDB - Registering repository: avaliacaoRepository - Interface: com.puc.tcc.entrega.repository.AvaliacaoRepository - Factory: org.springframework.data.mongodb.repository.support.MongoRepositoryFactoryBean
+23:10:06.265 [Background Thread-1 (Spring IDE/3.9.5)] DEBUG org.springframework.data.repository.config.RepositoryConfigurationDelegate - Spring Data MongoDB - Registering repository: entregaRepository - Interface: com.puc.tcc.entrega.repository.EntregaRepository - Factory: org.springframework.data.mongodb.repository.support.MongoRepositoryFactoryBean
+23:31:38.306 [Background Thread-2 (Spring IDE/3.9.5)] DEBUG org.springframework.data.repository.config.RepositoryConfigurationDelegate - Spring Data JPA - Registering repository: contatoRepository - Interface: com.tower.condominio.repository.ContatoRepository - Factory: org.springframework.data.jpa.repository.support.JpaRepositoryFactoryBean
+23:31:38.318 [Background Thread-2 (Spring IDE/3.9.5)] DEBUG org.springframework.data.repository.config.RepositoryConfigurationDelegate - Spring Data JPA - Registering repository: moradorRepository - Interface: com.tower.condominio.repository.MoradorRepository - Factory: org.springframework.data.jpa.repository.support.JpaRepositoryFactoryBean
+23:31:38.323 [Background Thread-2 (Spring IDE/3.9.5)] DEBUG org.springframework.data.repository.config.RepositoryConfigurationDelegate - Spring Data JPA - Registering repository: enderecoRepository - Interface: com.tower.condominio.repository.EnderecoRepository - Factory: org.springframework.data.jpa.repository.support.JpaRepositoryFactoryBean
+23:31:38.327 [Background Thread-2 (Spring IDE/3.9.5)] DEBUG org.springframework.data.repository.config.RepositoryConfigurationDelegate - Spring Data JPA - Registering repository: pessoaRepository - Interface: com.tower.condominio.repository.PessoaRepository - Factory: org.springframework.data.jpa.repository.support.JpaRepositoryFactoryBean
+23:31:38.330 [Background Thread-2 (Spring IDE/3.9.5)] DEBUG org.springframework.data.repository.config.RepositoryConfigurationDelegate - Spring Data JPA - Registering repository: blocoRepository - Interface: com.tower.condominio.repository.BlocoRepository - Factory: org.springframework.data.jpa.repository.support.JpaRepositoryFactoryBean
+23:31:38.333 [Background Thread-2 (Spring IDE/3.9.5)] DEBUG org.springframework.data.repository.config.RepositoryConfigurationDelegate - Spring Data JPA - Registering repository: condominioRepository - Interface: com.tower.condominio.repository.CondominioRepository - Factory: org.springframework.data.jpa.repository.support.JpaRepositoryFactoryBean
+23:31:38.339 [Background Thread-2 (Spring IDE/3.9.5)] DEBUG org.springframework.data.repository.config.RepositoryConfigurationDelegate - Spring Data JPA - Registering repository: patoRepository - Interface: com.tower.condominio.repository.PatoRepository - Factory: org.springframework.data.jpa.repository.support.JpaRepositoryFactoryBean
+23:31:38.347 [Background Thread-2 (Spring IDE/3.9.5)] DEBUG org.springframework.data.repository.config.RepositoryConfigurationDelegate - Spring Data JPA - Registering repository: apartamentoRepository - Interface: com.tower.condominio.repository.ApartamentoRepository - Factory: org.springframework.data.jpa.repository.support.JpaRepositoryFactoryBean
+23:31:42.086 [Background Thread-2 (Spring IDE/3.9.5)] DEBUG org.springframework.data.repository.config.RepositoryConfigurationDelegate - Spring Data Elasticsearch - Registering repository: avaliacaoRepository - Interface: com.puc.tcc.consumer.repository.AvaliacaoRepository - Factory: org.springframework.data.elasticsearch.repository.support.ElasticsearchRepositoryFactoryBean
+23:31:42.090 [Background Thread-2 (Spring IDE/3.9.5)] DEBUG org.springframework.data.repository.config.RepositoryConfigurationDelegate - Spring Data Elasticsearch - Registering repository: entregaRepository - Interface: com.puc.tcc.consumer.repository.EntregaRepository - Factory: org.springframework.data.elasticsearch.repository.support.ElasticsearchRepositoryFactoryBean
+23:31:42.095 [Background Thread-2 (Spring IDE/3.9.5)] DEBUG org.springframework.data.repository.config.RepositoryConfigurationDelegate - Spring Data Elasticsearch - Registering repository: pedidoRepository - Interface: com.puc.tcc.consumer.repository.PedidoRepository - Factory: org.springframework.data.elasticsearch.repository.support.ElasticsearchRepositoryFactoryBean
+23:31:46.689 [Background Thread-2 (Spring IDE/3.9.5)] DEBUG org.springframework.data.repository.config.RepositoryConfigurationDelegate - Spring Data MongoDB - Registering repository: avaliacaoRepository - Interface: com.puc.tcc.entrega.repository.AvaliacaoRepository - Factory: org.springframework.data.mongodb.repository.support.MongoRepositoryFactoryBean
+23:31:46.692 [Background Thread-2 (Spring IDE/3.9.5)] DEBUG org.springframework.data.repository.config.RepositoryConfigurationDelegate - Spring Data MongoDB - Registering repository: entregaRepository - Interface: com.puc.tcc.entrega.repository.EntregaRepository - Factory: org.springframework.data.mongodb.repository.support.MongoRepositoryFactoryBean
+Memory pressure relief: Total: res = 12673024/12374016/-299008, res+swap = 9015296/8704000/-311296
+Memory pressure relief: Total: res = 12726272/12460032/-266240, res+swap = 9052160/8785920/-266240
+Memory pressure relief: Total: res = 12435456/12435456/0, res+swap = 8757248/8757248/0
+Memory pressure relief: Total: res = 12435456/12439552/4096, res+swap = 8761344/8761344/0
+Memory pressure relief: Total: res = 12439552/12439552/0, res+swap = 8761344/8761344/0
+Memory pressure relief: Total: res = 12804096/12476416/-327680, res+swap = 9129984/8798208/-331776
+Memory pressure relief: Total: res = 12398592/12394496/-4096, res+swap = 8720384/8716288/-4096
+Memory pressure relief: Total: res = 12394496/12394496/0, res+swap = 8716288/8716288/0
+Memory pressure relief: Total: res = 12394496/12398592/4096, res+swap = 8720384/8720384/0
+Memory pressure relief: Total: res = 12398592/12398592/0, res+swap = 8720384/8720384/0
+Memory pressure relief: Total: res = 12382208/12382208/0, res+swap = 8704000/8704000/0
+Memory pressure relief: Total: res = 12382208/12382208/0, res+swap = 8704000/8704000/0
+Memory pressure relief: Total: res = 12382208/12386304/4096, res+swap = 8708096/8708096/0
+Memory pressure relief: Total: res = 12386304/12386304/0, res+swap = 8708096/8708096/0
+Memory pressure relief: Total: res = 12386304/12386304/0, res+swap = 8708096/8708096/0
+Memory pressure relief: Total: res = 12386304/12390400/4096, res+swap = 8712192/8712192/0
+Memory pressure relief: Total: res = 12390400/12390400/0, res+swap = 8712192/8712192/0
+Memory pressure relief: Total: res = 12390400/12390400/0, res+swap = 8712192/8712192/0
+Memory pressure relief: Total: res = 12390400/12394496/4096, res+swap = 8716288/8716288/0
+Memory pressure relief: Total: res = 12394496/12394496/0, res+swap = 8716288/8716288/0
+Memory pressure relief: Total: res = 12394496/12394496/0, res+swap = 8716288/8716288/0
+Memory pressure relief: Total: res = 12431360/12316672/-114688, res+swap = 8765440/8638464/-126976
+Memory pressure relief: Total: res = 12312576/12312576/0, res+swap = 8638464/8634368/-4096
+Memory pressure relief: Total: res = 12423168/12296192/-126976, res+swap = 8753152/8626176/-126976
+Memory pressure relief: Total: res = 12603392/12447744/-155648, res+swap = 8933376/8769536/-163840
+Memory pressure relief: Total: res = 12435456/12435456/0, res+swap = 8757248/8757248/0
+Memory pressure relief: Total: res = 12435456/12435456/0, res+swap = 8757248/8757248/0
+Memory pressure relief: Total: res = 12435456/12439552/4096, res+swap = 8761344/8761344/0
+Memory pressure relief: Total: res = 12439552/12439552/0, res+swap = 8761344/8761344/0
+Memory pressure relief: Total: res = 12423168/12423168/0, res+swap = 8744960/8744960/0
+Memory pressure relief: Total: res = 12423168/12423168/0, res+swap = 8744960/8744960/0
+Memory pressure relief: Total: res = 12423168/12427264/4096, res+swap = 8749056/8749056/0
+Memory pressure relief: Total: res = 12591104/12447744/-143360, res+swap = 8916992/8769536/-147456
+Memory pressure relief: Total: res = 12439552/12431360/-8192, res+swap = 8761344/8753152/-8192
+Memory pressure relief: Total: res = 12431360/12431360/0, res+swap = 8753152/8753152/0
+Memory pressure relief: Total: res = 12431360/12435456/4096, res+swap = 8757248/8757248/0
+Memory pressure relief: Total: res = 12435456/12435456/0, res+swap = 8757248/8757248/0
+Memory pressure relief: Total: res = 12435456/12435456/0, res+swap = 8757248/8757248/0
+Memory pressure relief: Total: res = 12435456/12439552/4096, res+swap = 8761344/8761344/0
+Memory pressure relief: Total: res = 12439552/12439552/0, res+swap = 8761344/8761344/0
+Memory pressure relief: Total: res = 12439552/12443648/4096, res+swap = 8765440/8765440/0
+Memory pressure relief: Total: res = 12443648/12443648/0, res+swap = 8765440/8765440/0
+Memory pressure relief: Total: res = 12443648/12443648/0, res+swap = 8765440/8765440/0
+Connection to https://spring.io/blog.atom failed on spring.io: Falha temporário na resolução de nome. Retry attempt 0 started
+java.net.UnknownHostException: spring.io: Falha temporário na resolução de nome
+	at java.net.Inet6AddressImpl.lookupAllHostAddr(Native Method)
+	at java.net.InetAddress$2.lookupAllHostAddr(InetAddress.java:928)
+	at java.net.InetAddress.getAddressesFromNameService(InetAddress.java:1323)
+	at java.net.InetAddress.getAllByName0(InetAddress.java:1276)
+	at java.net.InetAddress.getAllByName(InetAddress.java:1192)
+	at java.net.InetAddress.getAllByName(InetAddress.java:1126)
+	at org.apache.http.impl.conn.SystemDefaultDnsResolver.resolve(SystemDefaultDnsResolver.java:45)
+	at org.apache.http.impl.conn.DefaultClientConnectionOperator.resolveHostname(DefaultClientConnectionOperator.java:262)
+	at org.apache.http.impl.conn.DefaultClientConnectionOperator.openConnection(DefaultClientConnectionOperator.java:161)
+	at org.apache.http.impl.conn.AbstractPoolEntry.open(AbstractPoolEntry.java:144)
+	at org.apache.http.impl.conn.AbstractPooledConnAdapter.open(AbstractPooledConnAdapter.java:134)
+	at org.apache.http.impl.client.DefaultRequestDirector.tryConnect(DefaultRequestDirector.java:612)
+	at org.apache.http.impl.client.DefaultRequestDirector.execute(DefaultRequestDirector.java:447)
+	at org.apache.http.impl.client.AbstractHttpClient.doExecute(AbstractHttpClient.java:884)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:82)
+	at org.eclipse.ecf.provider.filetransfer.httpclient4.HttpClientRetrieveFileTransfer.performConnect(HttpClientRetrieveFileTransfer.java:1084)
+	at org.eclipse.ecf.provider.filetransfer.httpclient4.HttpClientRetrieveFileTransfer.access$0(HttpClientRetrieveFileTransfer.java:1075)
+	at org.eclipse.ecf.provider.filetransfer.httpclient4.HttpClientRetrieveFileTransfer$1.performFileTransfer(HttpClientRetrieveFileTransfer.java:1071)
+	at org.eclipse.ecf.filetransfer.FileTransferJob.run(FileTransferJob.java:74)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:60)
+Memory pressure relief: Total: res = 12451840/12455936/4096, res+swap = 8794112/8790016/-4096
+Memory pressure relief: Total: res = 12468224/12455936/-12288, res+swap = 8802304/8790016/-12288

@@ -26,7 +26,7 @@ public class OAuthApplication implements CommandLineRunner{
     @Override
 	public void run(String... arg0) throws Exception {
 		//clearRepositories.clear();
-		
+    	
     	Usuario admin = Usuario.builder()
     			.id("5b65dbf8397d8817426f7130")
     			.username("admin")
