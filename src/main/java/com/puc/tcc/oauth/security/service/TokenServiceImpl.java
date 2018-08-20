@@ -31,7 +31,7 @@ public class TokenServiceImpl implements TokenService {
 	private String tokenKey;
 
 	private final UserDetailsService userDetailsService;
-
+	
 	@Autowired
 	public TokenServiceImpl(final UserDetailsService userDetailsService) {
 		this.userDetailsService = userDetailsService;
@@ -65,6 +65,9 @@ public class TokenServiceImpl implements TokenService {
 			throw new OAuthException(HttpStatus.FORBIDDEN, Constants.FORBIDDEN);
 		}
 
+		if(user.getIdCadastro() != null) {
+			tokenData.put("idCadastro", user.getIdCadastro());
+		}
 		tokenData.put("clientType", "user");
 		tokenData.put("userID", user.getId());
 		tokenData.put("username", user.getUsername());

@@ -120,4 +120,14 @@ public class UsuarioServiceImpl implements UsuarioService {
 		
 		return usuario;
 	}
+
+	@Override
+	public void updateIdCadastro(String idUsuario, String idCadastro) throws OAuthException {
+		Optional<Usuario> optional = usuarioRepository.findById(idUsuario);
+		Usuario usuario = validarUsuario(optional);
+	
+		usuario.setIdCadastro(idCadastro);
+
+		usuarioRepository.save(usuario);
+	}
 }

@@ -29,6 +29,8 @@ public class Usuario implements UserDetails {
     
     private String password;
     
+    private String idCadastro;
+    
     private boolean accountNonExpired;
     
     private boolean accountNonLocked;

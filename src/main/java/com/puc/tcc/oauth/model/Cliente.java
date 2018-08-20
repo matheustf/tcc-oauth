@@ -23,6 +23,12 @@ public class Cliente implements Serializable {
     private String id;
 	
 	@NotNull(message = "Campo Obrigatorio!")
+	private String idUsuario;
+	
+	@NotNull(message = "Campo Obrigatorio!")
+	private String idCliente;
+	
+	@NotNull(message = "Campo Obrigatorio!")
 	private String nome;
 	
 	@NotNull(message = "Campo Obrigatorio!")

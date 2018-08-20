@@ -20,4 +20,5 @@ public class UsuarioDTO implements Serializable {
     private String username;
     private String password;
     private String authority;
+    private String idCadastro;
 }

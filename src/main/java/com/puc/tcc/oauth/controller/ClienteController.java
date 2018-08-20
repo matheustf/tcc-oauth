@@ -48,7 +48,7 @@ public class ClienteController {
 	}
 
 	@PostMapping("")
-	public ResponseEntity<ClienteDTO> incluir(@RequestBody @Valid ClienteDTO compraDTO) {
+	public ResponseEntity<ClienteDTO> incluir(@RequestBody @Valid ClienteDTO compraDTO) throws OAuthException {
 
 		ClienteDTO responseCompraDTO = clienteService.incluir(compraDTO);
 		return new ResponseEntity<ClienteDTO>(responseCompraDTO, HttpStatus.CREATED);

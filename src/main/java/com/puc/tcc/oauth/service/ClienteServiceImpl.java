@@ -23,10 +23,13 @@ import com.puc.tcc.oauth.utils.Util;
 public class ClienteServiceImpl implements ClienteService {
 
 	ClienteRepository clienteRepository;
+	
+	UsuarioService usuarioService;
 
 	@Autowired
-	public ClienteServiceImpl(ClienteRepository clienteRepository) {
+	public ClienteServiceImpl(ClienteRepository clienteRepository, UsuarioService usuarioService) {
 		this.clienteRepository = clienteRepository;
+		this.usuarioService = usuarioService;
 	}
 
 	@Override
@@ -52,10 +55,14 @@ public class ClienteServiceImpl implements ClienteService {
 	}
 
 	@Override
-	public ClienteDTO incluir(ClienteDTO clienteDTO) {
+	public ClienteDTO incluir(ClienteDTO clienteDTO) throws OAuthException {
 		Cliente cliente = modelMapper().map(clienteDTO, Cliente.class);
+		
 
 		cliente.setDataDoCadastro(Util.dataNow());
+		cliente.setIdCliente(Util.gerarCodigo("CLIENTE", 5));
+
+		usuarioService.updateIdCadastro(cliente.getIdUsuario(), cliente.getIdCliente());
 		
 		clienteRepository.save(cliente);
 		

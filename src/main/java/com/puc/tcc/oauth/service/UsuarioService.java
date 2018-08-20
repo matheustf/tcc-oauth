@@ -23,4 +23,6 @@ public interface UsuarioService {
 	
 	Usuario findByUsername(String userName) throws OAuthException;
 
+	void updateIdCadastro(String idUsuario, String idCadastro) throws OAuthException;
+
 }
