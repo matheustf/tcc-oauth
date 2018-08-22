@@ -6,6 +6,8 @@ public class Constants {
 	
 	public static final String BAD_REQUEST = "Usuario não autorizado";
 	
+	public static final String UNAUTHORIZED = "Usuario não autorizado ";
+	
 	public static final String USUARIO_EXISTENTE = "Usuario já existe";
 	
 	public static final String ITEM_NOT_FOUND = "Item não encontrado ";

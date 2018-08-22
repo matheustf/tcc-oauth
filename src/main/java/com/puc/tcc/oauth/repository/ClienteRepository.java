@@ -11,5 +11,7 @@ import com.puc.tcc.oauth.model.Cliente;
 public interface ClienteRepository extends MongoRepository<Cliente, String> {
 	
 	public Optional<Cliente> findById(String id);
+	
+	public Optional<Cliente> findByIdUsuario(String idUsuario);
 
 }

@@ -11,7 +11,7 @@ public interface ClienteService {
 	
 	ClienteDTO consultar(String id) throws OAuthException;
 	
-	ClienteDTO incluir(ClienteDTO clienteDTO) throws OAuthException;
+	ClienteDTO incluir(ClienteDTO clienteDTO, String token) throws OAuthException;
 	
 	ClienteDTO atualizar(String id, ClienteDTO clienteDTODetails) throws OAuthException;
 	

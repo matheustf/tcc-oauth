@@ -161,7 +161,8 @@
   <classpathentry kind="var" path="M2_REPO/org/xmlunit/xmlunit-core/2.5.1/xmlunit-core-2.5.1.jar" sourcepath="M2_REPO/org/xmlunit/xmlunit-core/2.5.1/xmlunit-core-2.5.1-sources.jar"/>
   <classpathentry kind="var" path="M2_REPO/org/projectlombok/lombok/1.16.20/lombok-1.16.20.jar" sourcepath="M2_REPO/org/projectlombok/lombok/1.16.20/lombok-1.16.20-sources.jar"/>
   <classpathentry kind="var" path="M2_REPO/org/modelmapper/modelmapper/1.1.0/modelmapper-1.1.0.jar" sourcepath="M2_REPO/org/modelmapper/modelmapper/1.1.0/modelmapper-1.1.0-sources.jar"/>
-  <classpathentry kind="var" path="M2_REPO/org/springframework/boot/spring-boot-starter-mail/2.0.1.RELEASE/spring-boot-starter-mail-2.0.1.RELEASE.jar"/>
+  <classpathentry kind="var" path="M2_REPO/org/springframework/boot/spring-boot-starter-mail/2.0.4.RELEASE/spring-boot-starter-mail-2.0.4.RELEASE.jar" sourcepath="M2_REPO/org/springframework/boot/spring-boot-starter-mail/2.0.4.RELEASE/spring-boot-starter-mail-2.0.4.RELEASE-sources.jar"/>
   <classpathentry kind="var" path="M2_REPO/org/springframework/spring-context-support/5.0.8.RELEASE/spring-context-support-5.0.8.RELEASE.jar" sourcepath="M2_REPO/org/springframework/spring-context-support/5.0.8.RELEASE/spring-context-support-5.0.8.RELEASE-sources.jar"/>
   <classpathentry kind="var" path="M2_REPO/com/sun/mail/javax.mail/1.6.1/javax.mail-1.6.1.jar" sourcepath="M2_REPO/com/sun/mail/javax.mail/1.6.1/javax.mail-1.6.1-sources.jar"/>
+  <classpathentry kind="var" path="M2_REPO/com/googlecode/json-simple/json-simple/1.1/json-simple-1.1.jar" sourcepath="M2_REPO/com/googlecode/json-simple/json-simple/1.1/json-simple-1.1-sources.jar"/>
 </classpath>

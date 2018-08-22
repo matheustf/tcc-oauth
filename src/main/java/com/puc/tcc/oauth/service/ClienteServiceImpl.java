@@ -55,10 +55,14 @@ public class ClienteServiceImpl implements ClienteService {
 	}
 
 	@Override
-	public ClienteDTO incluir(ClienteDTO clienteDTO) throws OAuthException {
+	public ClienteDTO incluir(ClienteDTO clienteDTO, String token) throws OAuthException {
 		Cliente cliente = modelMapper().map(clienteDTO, Cliente.class);
 		
-
+		String idUsuario = Util.getPagameterToken(token, "userID");
+		
+		verificarSeUsuarioJaFoiCadastrado(idUsuario);
+		
+		cliente.setIdUsuario(idUsuario);
 		cliente.setDataDoCadastro(Util.dataNow());
 		cliente.setIdCliente(Util.gerarCodigo("CLIENTE", 5));
 
@@ -105,5 +109,13 @@ public class ClienteServiceImpl implements ClienteService {
 	private Cliente validarCliente(Optional<Cliente> optional) throws OAuthException {
 		return Optional.ofNullable(optional).get()
 		.orElseThrow(() -> new OAuthException(HttpStatus.NOT_FOUND, Constants.ITEM_NOT_FOUND));
+	}
+	
+	private void verificarSeUsuarioJaFoiCadastrado(String idUsuario) throws OAuthException {
+		Optional<Cliente> optional = clienteRepository.findByIdUsuario(idUsuario);
+		
+		if(!Optional.empty().equals(optional)) {
+			throw new OAuthException(HttpStatus.NOT_FOUND, Constants.USUARIO_EXISTENTE);
+		};
 	}
 }
