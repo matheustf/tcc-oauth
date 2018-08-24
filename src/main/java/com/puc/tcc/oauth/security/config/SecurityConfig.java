@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.puc.tcc.oauth.model.Authority;
 import com.puc.tcc.oauth.security.filter.AuthenticationTokenFilter;
 import com.puc.tcc.oauth.security.service.TokenAuthenticationService;
 
@@ -38,7 +39,20 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                  .antMatchers("/api/usuario/cliente").permitAll()
                  .antMatchers("/api/cliente").hasAuthority("ROLE_CLIENTE")
                  .antMatchers("/api/fornecedor").hasAuthority("ROLE_FORNECEDOR")
-                 .antMatchers("/entrega/avaliacoes/cliente").hasAnyAuthority("ROLE_CLIENTE")
+                 //Avaliacao
+                 .antMatchers(HttpMethod.GET,"/entrega/avaliacoes/**").hasAnyAuthority("ROLE_CLIENTE")
+                 .antMatchers(HttpMethod.POST,"/entrega/avaliacoes/**").hasAnyAuthority("ROLE_CLIENTE")
+                 .antMatchers(HttpMethod.PUT,"/entrega/avaliacoes/**").hasAnyAuthority("ROLE_CLIENTE")
+                 .antMatchers(HttpMethod.GET,"/entrega/avaliacoes/{[a-z0-9]+}").hasAnyAuthority("ROLE_ADMIN")
+                 .antMatchers(HttpMethod.DELETE,"/entrega/avaliacoes/{[a-z0-9]+}").hasAnyAuthority("ROLE_ADMIN")
+                 //Entrega
+                 .antMatchers(HttpMethod.GET,"/entrega/entregas/**").hasAnyAuthority("ROLE_CLIENTE")
+                 .antMatchers(HttpMethod.POST,"/entrega/entregas/**").hasAnyAuthority("ROLE_CLIENTE")
+                 .antMatchers(HttpMethod.PUT,"/entrega/entregas/**").hasAnyAuthority("ROLE_CLIENTE")
+                 .antMatchers(HttpMethod.GET,"/entrega/entregas/{[a-z0-9]+}").hasAnyAuthority("ROLE_ADMIN")
+                 .antMatchers(HttpMethod.DELETE,"/entrega/entregas/{[a-z0-9]+}").hasAnyAuthority("ROLE_ADMIN")
+                 
+                 
                  .anyRequest().authenticated()
                  .and()
                  .addFilterBefore(new AuthenticationTokenFilter(tokenAuthenticationService),
