@@ -1,5 +1,8 @@
 package com.puc.tcc.oauth.utils;
 
+import java.io.File;
+import java.io.IOException;
+import java.nio.file.Files;
 import java.security.MessageDigest;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
@@ -12,6 +15,7 @@ import javax.xml.bind.DatatypeConverter;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.http.HttpStatus;
 
+import com.puc.tcc.oauth.config.email.EmailSenderComponent;
 import com.puc.tcc.oauth.consts.Constants;
 import com.puc.tcc.oauth.exception.OAuthException;
 
@@ -65,6 +69,10 @@ public class Util {
 			throw new OAuthException(HttpStatus.INTERNAL_SERVER_ERROR, Constants.SERVER_ERROR);
 		}
 	}
+	
+	public static void main(String[] args) throws OAuthException {
+		System.out.println(criptografarMD5("matheusadminteles123@!"));
+	}
 
 	public static String getPagameterToken(String token, String tokenParameter) throws OAuthException {
 		try {
@@ -91,5 +99,5 @@ public class Util {
 		
 		return header.substring(0,next);
 	}
-
+	
 }

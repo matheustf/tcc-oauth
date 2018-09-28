@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -49,9 +50,9 @@ public class FornecedorController {
 	}
 
 	@PostMapping("")
-	public ResponseEntity<FornecedorDTO> incluir(@RequestBody @Valid FornecedorDTO fornecedorDTO) {
+	public ResponseEntity<FornecedorDTO> incluir(@RequestBody @Valid FornecedorDTO fornecedorDTO, @RequestHeader(value = "x-access-token") String token) throws OAuthException {
 
-		FornecedorDTO responseFornecedorDTO = fornecedorService.incluir(fornecedorDTO);
+		FornecedorDTO responseFornecedorDTO = fornecedorService.incluir(fornecedorDTO, token);
 		return new ResponseEntity<FornecedorDTO>(responseFornecedorDTO, HttpStatus.CREATED);
 	}
 

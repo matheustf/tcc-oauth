@@ -68,6 +68,9 @@ public class TokenServiceImpl implements TokenService {
 		if(user.getIdCadastro() != null) {
 			tokenData.put("idCadastro", user.getIdCadastro());
 		}
+		if(user.getIdCadastro() != null) {
+			tokenData.put("email", user.getEmail());
+		}
 		tokenData.put("clientType", "user");
 		tokenData.put("userID", user.getId());
 		tokenData.put("username", user.getUsername());

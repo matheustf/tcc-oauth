@@ -32,6 +32,9 @@ public class Cliente implements Serializable {
 	private String nome;
 	
 	@NotNull(message = "Campo Obrigatorio!")
+	private String email;
+	
+	@NotNull(message = "Campo Obrigatorio!")
 	private String dataDeNascimento;
 	
 	@NotNull(message = "Campo Obrigatorio!")
@@ -41,7 +44,6 @@ public class Cliente implements Serializable {
 	private String dataDoCadastro;
 	
 	private Endereco endereco;
-	
 	
 	public Cliente update(Cliente cliente, Cliente detailsCliente) {
 

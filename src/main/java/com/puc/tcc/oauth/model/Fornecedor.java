@@ -18,7 +18,13 @@ import lombok.NoArgsConstructor;
 public class Fornecedor {
 
 	@Id
-	private Long id;
+	private String id;
+	
+	@NotNull(message = "Campo Obrigatorio!")
+	private String idUsuario;
+
+	@NotNull(message = "Campo Obrigatorio!")
+	private String idFornecedor;
 	
 	@NotNull(message = "Campo Obrigatorio!")
 	private String nomeFantasia;

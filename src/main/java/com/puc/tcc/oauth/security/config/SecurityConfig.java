@@ -43,15 +43,24 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                  .antMatchers(HttpMethod.GET,"/entrega/avaliacoes/**").hasAnyAuthority("ROLE_CLIENTE")
                  .antMatchers(HttpMethod.POST,"/entrega/avaliacoes/**").hasAnyAuthority("ROLE_CLIENTE")
                  .antMatchers(HttpMethod.PUT,"/entrega/avaliacoes/**").hasAnyAuthority("ROLE_CLIENTE")
-                 .antMatchers(HttpMethod.GET,"/entrega/avaliacoes/{[a-z0-9]+}").hasAnyAuthority("ROLE_ADMIN")
-                 .antMatchers(HttpMethod.DELETE,"/entrega/avaliacoes/{[a-z0-9]+}").hasAnyAuthority("ROLE_ADMIN")
+                 .antMatchers(HttpMethod.GET,"/entrega/avaliacoes/{[A-z0-9-]+}").hasAnyAuthority("ROLE_ADMIN")
+                 .antMatchers(HttpMethod.DELETE,"/entrega/avaliacoes/{[A-z0-9-]+}").hasAnyAuthority("ROLE_ADMIN")
                  //Entrega
                  .antMatchers(HttpMethod.GET,"/entrega/entregas/**").hasAnyAuthority("ROLE_CLIENTE")
                  .antMatchers(HttpMethod.POST,"/entrega/entregas/**").hasAnyAuthority("ROLE_CLIENTE")
                  .antMatchers(HttpMethod.PUT,"/entrega/entregas/**").hasAnyAuthority("ROLE_CLIENTE")
-                 .antMatchers(HttpMethod.GET,"/entrega/entregas/{[a-z0-9]+}").hasAnyAuthority("ROLE_ADMIN")
-                 .antMatchers(HttpMethod.DELETE,"/entrega/entregas/{[a-z0-9]+}").hasAnyAuthority("ROLE_ADMIN")
+                 .antMatchers(HttpMethod.GET,"/entrega/entregas/{[A-z0-9-]+}").hasAnyAuthority("ROLE_ADMIN")
+                 .antMatchers(HttpMethod.DELETE,"/entrega/entregas/{[A-z0-9-]+}").hasAnyAuthority("ROLE_ADMIN")
                  
+                 //Produtos
+                 .antMatchers("/vendas/**").permitAll()
+                 .antMatchers(HttpMethod.POST,"/vendas/produtos/{[A-z0-9-]+}/aprovar").hasAnyAuthority("ROLE_ADMIN")
+                 .antMatchers(HttpMethod.POST,"/vendas/produtos/{[A-z0-9-]+}/disponibilizar").hasAnyAuthority("ROLE_FORNECEDOR")
+                 .antMatchers(HttpMethod.POST,"/vendas/produtos/{[A-z0-9-]+}/indisponibilizar").hasAnyAuthority("ROLE_FORNECEDOR")
+                 .antMatchers(HttpMethod.POST,"/vendas/produtos}").hasAnyAuthority("ROLE_FORNECEDOR")
+                 .antMatchers(HttpMethod.GET,"/vendas/produtos/{[A-z0-9-]+}").hasAnyAuthority("ROLE_FORNECEDOR")
+                 .antMatchers(HttpMethod.PUT,"/vendas/produtos/{[A-z0-9-]+}").hasAnyAuthority("ROLE_FORNECEDOR")
+                 .antMatchers(HttpMethod.DELETE,"/vendas/produtos/{[A-z0-9-]+}").hasAnyAuthority("ROLE_FORNECEDOR")
                  
                  .anyRequest().authenticated()
                  .and()
@@ -64,7 +73,12 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     
 	@RequestMapping({
 		"/entrega/avaliacoes/cliente", 
-		"/entrega/avaliacoes"
+		"/entrega/avaliacoes",
+		"/vendas/produtos",
+		"/vendas/produtos/{[A-z0-9-]+}/aprovar",
+		"/vendas/produtos/{[A-z0-9-]+}/disponibilizar",
+		"/vendas/produtos/{[A-z0-9-]+}/indisponibilizar",
+		"/vendas/produtos/{[A-z0-9-]+}"
 		})
 	public ResponseEntity<String> mappingAPI() {
 		return new ResponseEntity<String>("OK", HttpStatus.OK);

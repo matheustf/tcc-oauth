@@ -27,6 +27,9 @@ public class ClienteDTO implements Serializable {
 	private String nome;
 	
 	@NotNull()
+	private String email;
+	
+	@NotNull()
 	private String dataDeNascimento;
 	
 	@CPF

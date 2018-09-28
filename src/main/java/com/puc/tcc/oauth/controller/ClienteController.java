@@ -18,6 +18,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.puc.tcc.oauth.dto.ClienteDTO;
+import com.puc.tcc.oauth.dto.EnderecoDTO;
 import com.puc.tcc.oauth.exception.OAuthException;
 import com.puc.tcc.oauth.service.ClienteService;
 import com.puc.tcc.oauth.validate.TokenValidate;
@@ -59,6 +60,22 @@ public class ClienteController {
 		
 		ClienteDTO responseCompraDTO = clienteService.incluir(compraDTO, token);
 		return new ResponseEntity<ClienteDTO>(responseCompraDTO, HttpStatus.CREATED);
+	}
+	
+	@PostMapping("/endereco")
+	public ResponseEntity<EnderecoDTO> inserirEndereco(@RequestBody @Valid EnderecoDTO enderecoDTO, @RequestHeader(value = "x-access-token") String token) throws OAuthException {
+		tokenValidate.tokenSimpleValidate(token);
+		
+		clienteService.inserirEndereco(enderecoDTO, token);
+		return new ResponseEntity<EnderecoDTO>(HttpStatus.NO_CONTENT);
+	}
+	
+	@GetMapping("/endereco")
+	public ResponseEntity<EnderecoDTO> buscarEndereco(@RequestHeader(value = "x-access-token") String token) throws OAuthException {
+		tokenValidate.tokenSimpleValidate(token);
+		
+		EnderecoDTO enderecoDTO = clienteService.buscarEndereco(token);
+		return new ResponseEntity<EnderecoDTO>(enderecoDTO, HttpStatus.OK);
 	}
 
 	@PutMapping("/{id}")

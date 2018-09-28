@@ -17,7 +17,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 public class FornecedorDTO {
 
-	private Long id;
+	private String id;
 
 	@NotNull()
 	private String nomeFantasia;

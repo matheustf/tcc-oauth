@@ -11,7 +11,7 @@ public interface FornecedorService {
 	
 	FornecedorDTO consultar(String id) throws OAuthException;
 	
-	FornecedorDTO incluir(FornecedorDTO fornecedorDTO);
+	FornecedorDTO incluir(FornecedorDTO fornecedorDTO, String token) throws OAuthException;
 	
 	FornecedorDTO atualizar(String id, FornecedorDTO fornecedorDTODetails) throws OAuthException;
 	

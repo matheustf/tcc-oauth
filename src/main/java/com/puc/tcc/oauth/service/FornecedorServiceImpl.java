@@ -12,9 +12,11 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 import com.google.gson.reflect.TypeToken;
+import com.puc.tcc.oauth.config.email.EmailSenderComponent;
 import com.puc.tcc.oauth.consts.Constants;
 import com.puc.tcc.oauth.dto.FornecedorDTO;
 import com.puc.tcc.oauth.exception.OAuthException;
+import com.puc.tcc.oauth.model.Cliente;
 import com.puc.tcc.oauth.model.Fornecedor;
 import com.puc.tcc.oauth.repository.FornecedorRepository;
 import com.puc.tcc.oauth.utils.Util;
@@ -23,10 +25,17 @@ import com.puc.tcc.oauth.utils.Util;
 public class FornecedorServiceImpl implements FornecedorService {
 
 	FornecedorRepository fornecedorRepository;
+	
+	UsuarioService usuarioService;
+	
+	EmailSenderComponent emailSenderComponent;
 
 	@Autowired
-	public FornecedorServiceImpl(FornecedorRepository fornecedorRepository) {
+	public FornecedorServiceImpl(FornecedorRepository fornecedorRepository, UsuarioService usuarioService,
+			EmailSenderComponent emailSenderComponent) {
 		this.fornecedorRepository = fornecedorRepository;
+		this.usuarioService = usuarioService;
+		this.emailSenderComponent = emailSenderComponent;
 	}
 
 	@Override
@@ -53,12 +62,26 @@ public class FornecedorServiceImpl implements FornecedorService {
 	}
 
 	@Override
-	public FornecedorDTO incluir(FornecedorDTO fornecedorDTO) {
+	public FornecedorDTO incluir(FornecedorDTO fornecedorDTO, String token) throws OAuthException {
 		Fornecedor fornecedor = modelMapper().map(fornecedorDTO, Fornecedor.class);
 
-		fornecedor.setDataDoCadastro(Util.dataNow());
+		String idUsuario = Util.getPagameterToken(token, "userID");
 
+		verificarSeUsuarioJaFoiCadastrado(idUsuario);
+
+		fornecedor.setIdUsuario(idUsuario);
+		fornecedor.setDataDoCadastro(Util.dataNow());
+		fornecedor.setIdFornecedor(Util.gerarCodigo("FORNECEDOR", 5));
+		
+		usuarioService.updateUsuario(fornecedor.getIdUsuario(), fornecedor.getIdFornecedor(), fornecedor.getEmail());
+		
 		fornecedorRepository.save(fornecedor);
+		
+		try {
+			emailSenderComponent.emailBoasVindas(fornecedor.getNomeFantasia(), fornecedor.getEmail());
+		} catch (Exception e) {
+			System.out.println("Error file email");
+		}
 
 		return modelMapper().map(fornecedor, FornecedorDTO.class);
 	}
@@ -99,5 +122,14 @@ public class FornecedorServiceImpl implements FornecedorService {
 	private Fornecedor validarFornecedor(Optional<Fornecedor> optional) throws OAuthException {
 		return Optional.ofNullable(optional).get()
 				.orElseThrow(() -> new OAuthException(HttpStatus.NOT_FOUND, Constants.ITEM_NOT_FOUND));
+	}
+	
+	private void verificarSeUsuarioJaFoiCadastrado(String idUsuario) throws OAuthException {
+		Optional<Cliente> optional = fornecedorRepository.findByIdUsuario(idUsuario);
+
+		if (!Optional.empty().equals(optional)) {
+			throw new OAuthException(HttpStatus.NOT_FOUND, Constants.USUARIO_EXISTENTE);
+		}
+		;
 	}
 }
